@@ -99,23 +99,5 @@ class Brand
         var_dump($stores);
     }
 
-    // function getAuthor()
-    //    {
-    //        $returned_authors = $GLOBALS['DB']->query("SELECT authors.* FROM books
-    //        JOIN authors_books ON (books.id = authors_books.book_id) JOIN authors
-    //        ON (authors_books.author_id = authors.id)
-    //        WHERE books.id = {$this->getId()};");
-    //
-    //        $authors = array();
-    //
-    //        foreach ($returned_authors as $author) {
-    //            $name = $author['name'];
-    //            $id = $author['id'];
-    //            $new_author = new Author($name, $id);
-    //            array_push($authors, $new_author);
-    //        }
-    //
-    //        return $authors;
-    //    }
 }
 ?>

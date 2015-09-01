@@ -117,57 +117,57 @@
             //Assert
             $this->assertEquals($test_store, $result);
         }
-        // function testAddBrand()
-        // {
-        //     $store_name = "Footlocker";
-        //     $id = 1;
-        //     $test_store = new Store($store_name, $id);
-        //     $test_store->save();
-        //     $brand_name = "Nike";
-        //     $id2 = 2;
-        //
-        //     $test_brand = new Brand($brand_name, $id2);
-        //     $test_brand->save();
-        //     $test_store->addBrand($test_brand);
-        //     $this->assertEquals($test_store->getBrands(), [$test_brand]);
-        // }
-        // function testGetBrands()
-        // {
-        //     $store_name = "Footlocker";
-        //     $id = 1;
-        //     $test_store = new Store($store_name, $id);
-        //     $test_store->save();
-        //
-        //     $brand_name = "Nike";
-        //     $id2 = 2;
-        //     $test_brand = new Brand($brand_name, $id2);
-        //     $test_brand->save();
-        //
-        //     $brand_name2 = "Adidas";
-        //     $id3 = 3;
-        //     $test_brand2 = new Brand($brand_name2, $id3);
-        //     $test_brand2->save();
-        //
-        //     $test_store->addBrand($test_brand);
-        //     $test_store->addBrand($test_brand2);
-        //
-        //     $this->assertEquals($test_store->getBrands(), [$test_brand, $test_brand2]);
-        // }
-        // function testDelete()
-        // {
-        //     $store_name = "Footlocker";
-        //     $id = 1;
-        //     $test_store = new Store($store_name, $id);
-        //     $test_store->save();
-        //     $brand_name = "Nike";
-        //     $id2 = 2;
-        //     $test_brand = new Brand($brand_name, $id2);
-        //     $test_brand->save();
-        //
-        //     $test_store->addBrand($test_brand);
-        //     $test_store->delete();
-        //
-        //     $this->assertEquals([], $test_brand->getStores());
-        // }
+        function testAddBrand()
+        {
+            $store_name = "Footlocker";
+            $id = 1;
+            $test_store = new Store($store_name, $id);
+            $test_store->save();
+            $brand_name = "Nike";
+            $id2 = 2;
+
+            $test_brand = new Brand($brand_name, $id2);
+            $test_brand->save();
+            $test_store->addBrand($test_brand);
+            $this->assertEquals($test_store->getBrands(), [$test_brand]);
+        }
+        function testGetBrands()
+        {
+            $store_name = "Footlocker";
+            $id = 1;
+            $test_store = new Store($store_name, $id);
+            $test_store->save();
+
+            $brand_name = "Nike";
+            $id2 = 2;
+            $test_brand = new Brand($brand_name, $id2);
+            $test_brand->save();
+
+            $brand_name2 = "Adidas";
+            $id3 = 3;
+            $test_brand2 = new Brand($brand_name2, $id3);
+            $test_brand2->save();
+
+            $test_store->addBrand($test_brand);
+            $test_store->addBrand($test_brand2);
+
+            $this->assertEquals($test_store->getBrands(), [$test_brand, $test_brand2]);
+        }
+        function testDelete()
+        {
+            $store_name = "Footlocker";
+            $id = 1;
+            $test_store = new Store($store_name, $id);
+            $test_store->save();
+            $brand_name = "Nike";
+            $id2 = 2;
+            $test_brand = new Brand($brand_name, $id2);
+            $test_brand->save();
+
+            $test_store->addBrand($test_brand);
+            $test_store->delete();
+
+            $this->assertEquals([], $test_brand->getStores());
+        }
     }
  ?>
