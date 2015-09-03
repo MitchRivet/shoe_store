@@ -11,10 +11,14 @@
             {% for store in stores %}
                 <li><a href="/stores/{{ store.getId }}">{{ store.getStoreName }}</a></li>
                 {% endfor %}
+
         </ul>
+        {% else %}
+        <p>No stores found for this brand! Add a store below.</p>
+
     {% endif %}
 
-    <p>Add a store for this brand:</p>
+    <p>Add a new store for this brand:</p>
     <form action='/brand/{{ brand.getId }}/add_store' method='post'>
 
         <label for="store_name">Store name</label>
@@ -25,6 +29,7 @@
         <button type='submit'>Add store</button>
     </form>
 
+<a href="/">Return to stores page</a>
 
 
 

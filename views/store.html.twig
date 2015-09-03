@@ -12,6 +12,9 @@
                 <li><a href="/brand/{{ brand.getId }}">{{ brand.getBrandName }}</a></li>
                 {% endfor %}
         </ul>
+    {% else %}
+    <p>Currently no brand info for this store! Add a carried brands below.</p>
+
     {% endif %}
 
     <p>Add a brand for this store:</p>
@@ -25,7 +28,24 @@
         <button type='submit'>Add brand</button>
     </form>
 
+    <p>Would you like to update this store's name?<p>
 
+        <form action="/stores/{{ store.getId }}" method="post">
+            <input type="hidden" name="_method" value="patch">
+
+            <label for='new_name'>New store name:</label>
+            <input id='new_name' name='new_name' type='text' value="{{ store.getStoreName }}">
+            <button type = "submit">Update</button>
+            </form>
+
+
+
+    <form action = "/stores/{{ store.getId }}" method = "post">
+        <input type = "hidden" name = "_method" value = "delete">
+        <button type = "submit">DELETE THIS STORE</button>
+    </form>
+
+<a href="/">Return to stores page</a>
 
 
 

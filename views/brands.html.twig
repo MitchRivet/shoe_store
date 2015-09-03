@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Shoe Stores</title>
+</head>
+<body>
+    <h1>Brands list</h1>
+
+    {% if brands is not empty %}
+        <p>Brand List</p>
+        <ul>
+            {% for brand in brands %}
+                <li><a href="/brand/{{ brand.getId }}">{{ brand.getBrandName }}</a></li>
+                {% endfor %}
+        </ul>
+        {% else %}
+        <p>There are currently no brands! Add brands to a particular store via the store page</p>
+    {% endif %}
+
+
+    <a href="/">Return to stores page</a>
+
+</body>
+</html>
