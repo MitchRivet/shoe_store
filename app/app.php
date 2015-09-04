@@ -76,11 +76,16 @@
         return $app['twig']->render('index.html.twig', array('stores' => Store::getAll()));
     });
 
+    $app->delete("/stores", function() use ($app) {
+        Store::deleteAll();
+        return $app['twig']->render('index.html.twig', array('stores' => Store::getAll()));
+    });
+
     $app->patch("/stores/{id}", function($id) use ($app) {
         $store = Store::find($id);
         $new_store_name = $_POST['new_name'];
         $store->update($new_store_name);
-        // $store->save(); 
+        // $store->save();
         $brands = $store->getBrands();
         return $app['twig']->render('store.html.twig', array('store' => $store, 'brands' => $brands));
     });

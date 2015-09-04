@@ -21,7 +21,13 @@
 
         <button type='submit'>Add store</button>
     </form>
-    <a href="/brands">Click here to search by brands</a> 
+
+    <form action = "/stores" method = "post">
+        <input type = "hidden" name = "_method" value = "delete">
+        <button type = "submit">Delete all Stores</button>
+    </form>
+
+    <a href="/brands">Click here to search by brands</a>
 
 </body>
 </html>
